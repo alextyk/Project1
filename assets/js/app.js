@@ -1,6 +1,6 @@
 // on click that grabs in the input from the text box when submit is pressed
-$("#submit").on("click", function() {
-    var address = $("#input");
+$("#button-override").on("click", function() {
+    var address = $("#input-override");
     var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=Hh2Y6dWsZuA1C3ZM4fUcz1KEoUUAKHB2&location=" + address;
 // ajax call of the URL
     $.ajax({
@@ -14,11 +14,11 @@ $("#submit").on("click", function() {
       var lng = response.results[0].locations[0].latLng.lng;
       console.log(lat);
       console.log(lng);
-      showResults(lat, long)
+      showResults(lat, lng)
     });
 });
 
-function showResults(lat, long) {
+function showResults(lat, lng) {
   console.log(lat)
-  console.log(long)
+  console.log(lng)
 }
