@@ -12,27 +12,33 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- FONT AWESOME ICONS -->
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <title>GeoTrend Application</title>
 </head>
 <body id="bootstrap-override">
     <div class="container">
         <div class="jumbotron">
-            <h1>GeoTrend</h1>
+            <h1>GeoTrend<i class="fab fa-twitter-square"></i></h1>
+            <h3>Find Trending Hashtags In Your Area</h3>
         </div><!-- end of jumbotron -->
-        <input type="text" id="input"> <!-- input field for location search -->
-        <button type="button" class="btn btn-danger" id="submit">Search</button> <!-- button for submission of search -->
+
+            <div id="form-override">
+                <span>Search by City: </span>
+                <input id="input-override" type="text" placeholder="Name of City"> <!-- input field for location search -->
+                <br>
+                <button id="button-override" type="button" class="btn btn-primary">Search</button> <!-- button for submission of search -->
+            </div>
         <div> <!-- empty container to hold hashtags and other future data -->
-
-        </div>
     </div>
-
-    <!-- JAVASCRIPT -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-     <!-- JQUERY -->
-     
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+      
+    <!-- JQUERY -->
     <script type="text/javascript" src="assets/js/app.js"></script>
-   
+
     <!-- CHART JS -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script> -->
 </body>
