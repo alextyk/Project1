@@ -18,6 +18,7 @@
     <title>GeoTrend Application</title>
 </head>
 <body id="bootstrap-override">
+    <div class="notfooter">
 
     <!-- SIDEBAR -->
 
@@ -38,15 +39,15 @@
             <h3><em>Find Trending Hashtags In Your Area</em></h3>
         </div><!-- end of header -->
 
-            <div id="form-override">
+            <form data-parsley-validate>
                 <span>Search by City: </span>
                 <input id="input-override" type="text" placeholder="Name of City"> <!-- input field for location search -->
                 <br>
                 <button id="button-override" type="button" class="btn btn-primary">Search</button> <!-- button for submission of search -->
-            </div>
+            </form>
         <div class="storage"> <!-- empty container to hold hashtags and other future data --></div>
     </div>
-
+    </div>
         <!-- FOOTER -->
         <footer id="sticky-footer">
             <div class="social-icons">
@@ -54,17 +55,19 @@
                 <i class="fab fa-twitter-square"></i>
                 <i class="fab fa-reddit-square"></i>
             </div>
+
+        
         </footer>
         
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <!-- parsely -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
       
     <!-- JQUERY -->
     <script type="text/javascript" src="assets/js/app.js"></script>
 
-    <!-- TOAST UI -->
-    <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.js"></script>
 
 </body>
 </html>
