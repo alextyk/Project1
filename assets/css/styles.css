@@ -94,7 +94,7 @@ h3 {
 
 
 /* INPUT FORM STYLES */
-#form-override {
+form {
     /* border: 1px solid black; */
     text-align: center;
 }
@@ -143,5 +143,8 @@ h3 {
     margin-left: 20px;
     font-size: 40px;
 }
-
+.notfooter {
+    height: 100%;
+    min-height: 100vh;
+}
 

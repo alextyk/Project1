@@ -6,6 +6,8 @@ jQuery.ajaxPrefilter(function(options) {
 
 // on click that grabs in the input from the text box when submit is pressed
 $("#button-override").on("click", function() {
+    
+  
     var address = $("#input-override").val().trim();
     var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=Hh2Y6dWsZuA1C3ZM4fUcz1KEoUUAKHB2&location=" + address;
 // ajax call of the URL
@@ -75,6 +77,9 @@ function get_woeid_from_latlong(lat, lng) {
       // console.log(response.result);
       var woeid = response[0].woeid;
       get_trending_topics(woeid);
+      
+
+      
       // var woeid = response.result.places[0].contained_within[0].id; //haven't tested this yet
       // console.log(woeid);
       //here, we get the trends
@@ -88,6 +93,7 @@ function get_woeid_from_latlong(lat, lng) {
 
 function get_trending_topics(woeid) {
   
+  
  $.ajax({
   url: "https://api.twitter.com/1.1/trends/place.json?id=" + woeid,
   method: "GET",
@@ -96,7 +102,14 @@ function get_trending_topics(woeid) {
   }
   //parse and store responses
  }).then(function(response) {
+     
      console.log(response);
+     for (var i = 0; i < 20; i++) {
+      
+      $(".storage").append(response[0].trends[i].name);
+      $(".storage").append($("<br>"));
+     }
+     $("#sticky-footer").css("position", "static");
      
     //  geo_trending_topics.push(response.trends);
      /*
