@@ -6,8 +6,12 @@ jQuery.ajaxPrefilter(function(options) {
 
 // on click that grabs in the input from the text box when submit is pressed
 $("#button-override").on("click", function() {
-    
+  $(".storage").empty();
   
+  var input = $("#input-override").parsley();
+  $("#input-override").attr('data-parsely-validate-if-empty', true);
+  if (input.isValid()) {
+
     var address = $("#input-override").val().trim();
     var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=Hh2Y6dWsZuA1C3ZM4fUcz1KEoUUAKHB2&location=" + address;
 // ajax call of the URL
@@ -25,6 +29,11 @@ $("#button-override").on("click", function() {
       showResults(lat, lng);
       get_woeid_from_latlong(lat, lng);
     });
+  } else {
+    var error = $('<div class="error">Location must not be empty</div>');
+    $('.storage').append(error);
+    setTimeout(() => $(".storage").empty(), 5000);
+  }
 });
 
 function showResults(lat, lng) {
@@ -110,6 +119,7 @@ function get_trending_topics(woeid) {
       $(".storage").append($("<br>"));
      }
      $("#sticky-footer").css("position", "static");
+     $("#input-override").val("");
      
     //  geo_trending_topics.push(response.trends);
      /*
