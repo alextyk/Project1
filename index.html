@@ -12,17 +12,31 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- FONT AWESOME ICONS -->
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <!-- TOAST UI -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.css">
     <title>GeoTrend Application</title>
 </head>
 <body id="bootstrap-override">
+
+    <!-- SIDEBAR -->
+
+    <div id="side-nav" class="side-bar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+    </div>
+          
+          <!-- Use any element to open the sidenav -->
+          <span onclick="openNav()"><i class="fas fa-bars"></i></span>
+
     <div class="container">
-        <div class="jumbotron">
+        <div id="title" class="container">
             <h1>GeoTrend<i class="fab fa-twitter-square"></i></h1>
-            <h3>Find Trending Hashtags In Your Area</h3>
-        </div><!-- end of jumbotron -->
+            <h3><em>Find Trending Hashtags In Your Area</em></h3>
+        </div><!-- end of header -->
 
             <div id="form-override">
                 <span>Search by City: </span>
@@ -30,8 +44,18 @@
                 <br>
                 <button id="button-override" type="button" class="btn btn-primary">Search</button> <!-- button for submission of search -->
             </div>
-        <div> <!-- empty container to hold hashtags and other future data -->
+        <div class="storage"> <!-- empty container to hold hashtags and other future data --></div>
     </div>
+
+        <!-- FOOTER -->
+        <footer id="sticky-footer">
+            <div class="social-icons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-reddit-square"></i>
+            </div>
+        </footer>
+        
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -39,7 +63,8 @@
     <!-- JQUERY -->
     <script type="text/javascript" src="assets/js/app.js"></script>
 
-    <!-- CHART JS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script> -->
+    <!-- TOAST UI -->
+    <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.js"></script>
+
 </body>
 </html>
