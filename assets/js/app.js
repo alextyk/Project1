@@ -43,28 +43,28 @@ function showResults(lat, lng) {
 
 
 // ********** SIDEBAR FUNCTIONALITY **********
-/* Set the width of the side navigation to 250px */
+/* width of side bar 250px */
 function openNav() {
   document.getElementById("side-nav").style.width = "250px";
 }
 
-/* Set the width of the side navigation to 0 */
+/* close nav bar */
 function closeNav() {
   document.getElementById("side-nav").style.width = "0";
 
-  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-function openNav() {
-  document.getElementById("side-nav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-function closeNav() {
-  document.getElementById("side-nav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.body.style.backgroundColor = "white";
-}
+  function openNav() {
+    document.getElementById("side-nav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+
+
+  function closeNav() {
+    document.getElementById("side-nav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+  }
 }
 
 
@@ -113,8 +113,8 @@ function get_trending_topics(woeid) {
  }).then(function(response) {
      
      console.log(response);
+     $(".storage").append(("<h2>")).prepend($("#input-override").val());     
      for (var i = 0; i < 20; i++) {
-      
       $(".storage").append(response[0].trends[i].name);
       $(".storage").append($("<br>"));
      }
@@ -134,4 +134,3 @@ function get_trending_topics(woeid) {
  });
 
 }
-
