@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
      crossorigin="anonymous"></script>
-
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- FONT AWESOME ICONS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!-- TOAST UI -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+
     <title>GeoTrend Application</title>
 </head>
 <body id="bootstrap-override">
@@ -25,13 +25,19 @@
     <div id="side-nav" class="side-bar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#">About</a>
-            <a href="#">Services</a>
             <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact Us!</a>
     </div>
           
-          <!-- Use any element to open the sidenav -->
-          <span onclick="openNav()"><i class="fas fa-bars"></i></span>
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()"><i class="fas fa-bars"></i></span>
+    <!-- login -->
+    <div id="user-login">
+        <span><i class="fas fa-user-plus"></i><a href="#">Login</a></span>
+        <span class="divider"> |</span>
+        <span><a href="#">Sign Up</a></span>
+    </div>
 
     <div class="container">
         <div id="title" class="container">
@@ -40,8 +46,8 @@
         </div><!-- end of header -->
 
             <form id="form" data-parsley-validate>
-                <span>Search by City: </span>
-                <input id="input-override" type="text" placeholder="Name of City" required=""> <!-- input field for location search -->
+                <span>Discover Trends by Location: </span>
+                <input id="input-override" type="text" placeholder="Enter Location Here" required=""> <!-- input field for location search -->
                 <br>
                 <button id="button-override" type="button" class="btn btn-primary">Search</button> <!-- button for submission of search -->
             </form>
@@ -51,9 +57,15 @@
         <!-- FOOTER -->
         <footer id="sticky-footer">
             <div class="social-icons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-reddit-square"></i>
+                <i class="fab fa-linkedin"><a href="#"></a></i>
+                <i class="fab fa-reddit-square"><a href="#"></a></i>
+                <i class="fab fa-facebook"><a href="#"></a></i>
+                <i class="fas fa-phone-square"><a href="#"></a></i>
+            <div id="site-map">
+                <span><a href="#">Private Policy</a></span>
+                <span class="divider"> |</span>
+                <span><a href="#">Site Map</a></span>
+            </div>
             </div>
 
         

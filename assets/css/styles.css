@@ -3,15 +3,11 @@
     padding: 0;
 }
 
-/* body {
-    background: url(../images/hashtag-bg.jpg) no-repeat center center fixed; 
-    background-size: cover;
-    image-rendering: pixelated;
-    background-position: 50% 50%;
-} */
+body {
+    font-family: Merriweather, Lato, sans-serif;
+}
 
 /* SIDEBAR STYLES */
-/* The side navigation menu */
 .side-bar {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -54,11 +50,25 @@
     transition: margin-left .5s;
     padding: 20px;
   }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the side-bar (less padding and a smaller font size) */
+
+  /* media queries */
   @media screen and (max-height: 450px) {
     .side-bar {padding-top: 15px;}
     .side-bar a {font-size: 18px;}
+  }
+
+  .fas.fa-bars {
+      font-size: 35px;
+  }
+
+  #user-login {
+      float: right;
+      margin-right: 30px;
+      margin-top: 10px;
+  }
+
+  .fa-user-plus {
+      padding-right: 10px;
   }
 
 /* HEADER ELEMENT STYLES */
@@ -88,9 +98,9 @@ h3 {
     margin-top: 20px;
 }
 
-#bootstrap-override .jumbotron {
+/* #bootstrap-override {
     background-color: transparent !important;
-}
+} */
 
 
 /* INPUT FORM STYLES */
@@ -117,32 +127,90 @@ form {
     box-shadow: 3px 3px 5px #ccc;
 }
 
+#bootstrap-override button:hover {
+    background-color: orange;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.storage {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* FOOTER STYLES */
 #sticky-footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 50px;
+    height: auto;
     width: 100%;
     background-color: #1dcaff;
+    padding-top: -20px;
 }
 
 .social-icons {
     text-align: center;
+    font-size: 55px;
+    
+    
 }
 
 /* FONT AWESOME STYLES */
 
 .fab {
-    font-size: 40px;
-    margin: 5px;
+    font-size: 50px;
+    padding-right: 15px;
 }
+
+.social-icons .fa-phone-square {
+    font-size: 50px;
+    margin-left: 1px;
+}
+
+.fab:hover {
+    color: orange;
+}
+
+.fa-phone-square:hover {
+    color: orange;
+}
+
+
 
 .fas {
     margin-top: 10px;
     margin-left: 20px;
-    font-size: 40px;
+    font-size: 20px;
 }
+
+span a {
+    display: inline-block;
+    font-size: 18px;
+    color: black;
+    line-height: normal;
+    text-decoration: none;
+    margin-top: -30px;
+}
+
+span a:hover {
+    color: orange;
+}
+
+#site-map {
+    display: inline-block;
+    vertical-align: 15%;
+    margin-left: 50%;
+    margin-top: -50px;
+}
+
+.divider {
+    font-size: 20px;
+}
+
 .notfooter {
     height: 100%;
     min-height: 100vh;
@@ -157,5 +225,9 @@ form {
     padding: 15px;
     color: #fff;
     text-align: center;
+}
+
+.results-heading {
+    font-size: 30px;
 }
 
