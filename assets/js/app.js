@@ -1,3 +1,4 @@
+// bypassing CORS
 jQuery.ajaxPrefilter(function(options) {
   if (options.crossDomain && jQuery.support.cors) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
@@ -14,7 +15,7 @@ $("#button-override").on("click", function() {
 
     var address = $("#input-override").val().trim();
     var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=Hh2Y6dWsZuA1C3ZM4fUcz1KEoUUAKHB2&location=" + address;
-// ajax call of the URL
+// ajax call of the URL to get last long
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -51,15 +52,11 @@ function openNav() {
 /* close nav bar */
 function closeNav() {
   document.getElementById("side-nav").style.width = "0";
-
-
   function openNav() {
     document.getElementById("side-nav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
-
-
   function closeNav() {
     document.getElementById("side-nav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
@@ -67,42 +64,24 @@ function closeNav() {
   }
 }
 
-
+  // function that calls API that gets the WOEID from lat long
 function get_woeid_from_latlong(lat, lng) {
-  //console.log("getting woeid from twitter");
-
-  
   $.ajax({
       url: "https://api.twitter.com/1.1/trends/closest.json?lat=" + lat + "&long=" + lng,
       method: "GET",
       headers: {
           "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAKH%2F5gAAAAAAN9kwQVJuDJk%2Fm1KHHjEugsyFn7c%3DDzSgSVav4KccD3cvoIwEG5lpjoMTjCJVVartb5jfmICvzupeme"
       }
-
   //parse and store responses
   }).then(function(response) {
       console.log(response);
       console.log(response[0].woeid);
-      // console.log(response.result);
       var woeid = response[0].woeid;
       get_trending_topics(woeid);
-      
-
-      
-      // var woeid = response.result.places[0].contained_within[0].id; //haven't tested this yet
-      // console.log(woeid);
-      //here, we get the trends
-      // get_trending_topics(woeid);
   });
 }
-
-// function parseTweets(tweets) {
-//   console.log(tweets)
-// }
-
+  // function that calls the Twitter API for trends
 function get_trending_topics(woeid) {
-  
-  
  $.ajax({
   url: "https://api.twitter.com/1.1/trends/place.json?id=" + woeid,
   method: "GET",
@@ -111,7 +90,6 @@ function get_trending_topics(woeid) {
   }
   //parse and store responses
  }).then(function(response) {
-     
      console.log(response);
      $(".storage").append(("<h2>")).prepend($("#input-override").val());     
      for (var i = 0; i < 20; i++) {
@@ -120,17 +98,5 @@ function get_trending_topics(woeid) {
      }
      $("#sticky-footer").css("position", "static");
      $("#input-override").val("");
-     
-    //  geo_trending_topics.push(response.trends);
-     /*
-    geotrending topics will contain:
-    geo_trending_topics[0].name = "#SomeTopic"
-    geo_trending_topics[0].url = "http://twitter.com/search?q=%23SomeTopic"
-    geo_trending_topics[0].promoted_content = null
-    geo_trending_topics[0].tweet_volume = 57
-  //here, we get the trends*/
-
-
  });
-
 }
